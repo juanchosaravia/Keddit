@@ -1,5 +1,5 @@
 # Keddit
-A Reddit Android client using Kotlin
+A Reddit Android client developed using Kotlin
 
 Libraries used:
 - Retrofit 2.0
