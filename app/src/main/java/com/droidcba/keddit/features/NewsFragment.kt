@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.droidcba.keddit.R
 import com.droidcba.keddit.commons.RedditNews
-import com.droidcba.keddit.commons.RedditNewsItem
 import com.droidcba.keddit.commons.adapter.NewsAdapter
 import com.droidcba.keddit.commons.extensions.inflate
 import kotlinx.android.synthetic.main.news_fragment.*
@@ -22,7 +21,7 @@ class NewsFragment : Fragment() {
         private val KEY_REDDIT_NEWS = "redditNews"
     }
 
-    private var redditNews : RedditNews? = null
+    private var redditNews: RedditNews? = null
     private val newsManager by lazy { NewsManager() }
     private val newsList by lazy {
         news_list.apply {

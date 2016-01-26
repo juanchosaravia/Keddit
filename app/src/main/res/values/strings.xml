@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Keddit</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Reddit News</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_borrar">BorrarActivity</string>
 </resources>

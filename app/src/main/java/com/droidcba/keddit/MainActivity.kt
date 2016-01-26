@@ -20,11 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun changeFragment(f: Fragment) {
-        changeFragment(f, false)
-    }
-
-    fun changeFragment(f: Fragment, cleanStack: Boolean) {
+    fun changeFragment(f: Fragment, cleanStack: Boolean = false) {
         val ft = supportFragmentManager.beginTransaction();
         if (cleanStack) {
             clearBackStack();

@@ -11,10 +11,6 @@ data class RedditNews(
         val before: String,
         val news: List<RedditNewsItem>) : Parcelable {
 
-    companion object {
-        val CREATOR = createParcel { RedditNews(it) }
-    }
-
     protected constructor(parcelIn: Parcel) : this(
             parcelIn.readString(),
             parcelIn.readString(),
