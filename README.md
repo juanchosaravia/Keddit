@@ -8,4 +8,4 @@ Libraries used:
 - RxAndroid
 - Picasso
 
-![alt tag](https://raw.github.com/juanchosaravia/Keddit/master/resources/keddit_demo_v1.gif)
+![](https://raw.github.com/juanchosaravia/Keddit/master/resources/keddit_demo_v1.gif)
