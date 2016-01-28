@@ -7,5 +7,3 @@ Libraries used:
 - RxJava
 - RxAndroid
 - Picasso
-
-![](https://raw.github.com/juanchosaravia/Keddit/master/resources/keddit_demo_v1.gif)
