@@ -41,15 +41,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Prevent close the app when pressing back button.
+     * Finish activity when reaching the last fragment.
      */
     override fun onBackPressed() {
-        val fragmentManager = getSupportFragmentManager();
-        if (fragmentManager.getBackStackEntryCount() > 1) {
-            // If there are back-stack entries, leave the FragmentActivity
-            // implementation take care of them.
+        val fragmentManager = supportFragmentManager;
+        if (fragmentManager.backStackEntryCount > 1) {
             fragmentManager.popBackStack();
-
         } else {
             finish();
         }
