@@ -9,7 +9,7 @@ import com.droidcba.keddit.commons.adapter.ViewTypeDelegateAdapter
 import com.droidcba.keddit.commons.extensions.getFriendlyTime
 import com.droidcba.keddit.commons.extensions.inflate
 import com.droidcba.keddit.commons.extensions.loadImg
-import kotlinx.android.synthetic.news_item.view.*
+import kotlinx.android.synthetic.main.news_item.view.*
 
 class SimpleNewsDelegateAdapter : ViewTypeDelegateAdapter {
 

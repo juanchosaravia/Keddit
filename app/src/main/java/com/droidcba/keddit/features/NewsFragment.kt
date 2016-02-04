@@ -33,10 +33,9 @@ class NewsFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         //return inflater.inflate(R.layout.news_fragment, container, false)
-        return container.inflate(R.layout.news_fragment)
+        return container?.inflate(R.layout.news_fragment)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -69,7 +68,7 @@ class NewsFragment : Fragment() {
                             redditNews = retrievedNews
                             (newsList.adapter as NewsAdapter).addNews(retrievedNews.news)
                         },
-                        { e -> Snackbar.make(view, e.message, Snackbar.LENGTH_LONG).show() }
+                        { e -> Snackbar.make(newsList, e.message ?: "", Snackbar.LENGTH_LONG).show() }
                 )
     }
 
