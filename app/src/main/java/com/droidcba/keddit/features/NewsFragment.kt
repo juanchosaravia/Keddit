@@ -12,7 +12,6 @@ import com.droidcba.keddit.commons.RedditNews
 import com.droidcba.keddit.commons.adapter.NewsAdapter
 import com.droidcba.keddit.commons.extensions.inflate
 import kotlinx.android.synthetic.main.news_fragment.*
-import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
 class NewsFragment : Fragment() {
@@ -62,7 +61,6 @@ class NewsFragment : Fragment() {
         newsManager
                 .getNews(redditNews?.after ?: "")
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe (
                         { retrievedNews ->
                             redditNews = retrievedNews
