@@ -1,13 +1,11 @@
-package com.droidcba.carwapp.washer.api
+package com.droidcba.keddit.api
 
-import com.droidcba.keddit.api.RedditApi
-import com.droidcba.keddit.api.RedditNewsResponse
 import com.google.gson.GsonBuilder
-import com.squareup.okhttp.OkHttpClient
-import retrofit.Call
-import retrofit.GsonConverterFactory
-import retrofit.Retrofit
-import retrofit.RxJavaCallAdapterFactory
+import okhttp3.OkHttpClient
+import retrofit2.Call
+import retrofit2.Retrofit
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 
 class RestAPI() {
 

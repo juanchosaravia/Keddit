@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.droidcba.keddit.R
 import com.droidcba.keddit.commons.RedditNews
-import com.droidcba.keddit.commons.adapter.NewsAdapter
 import com.droidcba.keddit.commons.extensions.inflate
+import com.droidcba.keddit.features.adapters.NewsAdapter
 import kotlinx.android.synthetic.main.news_fragment.*
 import rx.schedulers.Schedulers
 
