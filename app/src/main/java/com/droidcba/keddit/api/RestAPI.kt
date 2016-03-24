@@ -1,11 +1,10 @@
 package com.droidcba.keddit.api
 
-import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 class RestAPI() {
 
@@ -14,7 +13,7 @@ class RestAPI() {
     init {
         val retrofit = Retrofit.Builder()
                 .baseUrl("https://www.reddit.com")
-                .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
+                .addConverterFactory(MoshiConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .client(OkHttpClient())
                 .build()

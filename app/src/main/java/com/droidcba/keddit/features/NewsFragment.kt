@@ -2,19 +2,19 @@ package com.droidcba.keddit.features
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.droidcba.keddit.R
+import com.droidcba.keddit.commons.BaseRxFragment
 import com.droidcba.keddit.commons.RedditNews
 import com.droidcba.keddit.commons.extensions.inflate
 import com.droidcba.keddit.features.adapters.NewsAdapter
 import kotlinx.android.synthetic.main.news_fragment.*
 import rx.schedulers.Schedulers
 
-class NewsFragment : Fragment() {
+class NewsFragment : BaseRxFragment() {
 
     companion object {
         private val KEY_REDDIT_NEWS = "redditNews"
@@ -33,7 +33,6 @@ class NewsFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        //return inflater.inflate(R.layout.news_fragment, container, false)
         return container?.inflate(R.layout.news_fragment)
     }
 
@@ -58,7 +57,7 @@ class NewsFragment : Fragment() {
     }
 
     private fun requestMoreNews() {
-        newsManager
+        val subscription = newsManager
                 .getNews(redditNews?.after ?: "")
                 .subscribeOn(Schedulers.io())
                 .subscribe (
@@ -68,6 +67,7 @@ class NewsFragment : Fragment() {
                         },
                         { e -> Snackbar.make(newsList, e.message ?: "", Snackbar.LENGTH_LONG).show() }
                 )
+        subscriptions.add(subscription)
     }
 
     private fun initAdapter() {
