@@ -65,7 +65,11 @@ class NewsFragment : BaseRxFragment() {
                             redditNews = retrievedNews
                             (newsList.adapter as NewsAdapter).addNews(retrievedNews.news)
                         },
-                        { e -> Snackbar.make(newsList, e.message ?: "", Snackbar.LENGTH_LONG).show() }
+                        { e ->
+                            if (view != null) {
+                                Snackbar.make(view!!, e.message ?: "", Snackbar.LENGTH_LONG).show()
+                            }
+                        }
                 )
         subscriptions.add(subscription)
     }
