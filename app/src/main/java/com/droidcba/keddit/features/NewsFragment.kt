@@ -12,6 +12,7 @@ import com.droidcba.keddit.commons.RedditNews
 import com.droidcba.keddit.commons.extensions.inflate
 import com.droidcba.keddit.features.adapters.NewsAdapter
 import kotlinx.android.synthetic.main.news_fragment.*
+import okhttp3.Cache
 import rx.schedulers.Schedulers
 
 class NewsFragment : BaseRxFragment() {
@@ -21,7 +22,7 @@ class NewsFragment : BaseRxFragment() {
     }
 
     private var redditNews: RedditNews? = null
-    private val newsManager by lazy { NewsManager() }
+    private val newsManager by lazy { NewsManager(Cache(context.cacheDir, 10 * 1024 * 1024)) }//10mb
     private val newsList by lazy {
         news_list.apply {
             setHasFixedSize(true); // use this setting to improve performance

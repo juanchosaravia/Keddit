@@ -2,12 +2,15 @@ package com.droidcba.keddit.api
 
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.Query
 
 interface RedditApi {
 
-    @GET("/top.json?limit=10")
-    fun getTop(@Query("after") after: String): Call<RedditNewsResponse>;
+    @GET("/top.json")
+    fun getTop(@Query("limit") limit: String,
+               @Query("after") after: String,
+               @Header("fresh") fresh: String?): Call<RedditNewsResponse>;
 
 }
 

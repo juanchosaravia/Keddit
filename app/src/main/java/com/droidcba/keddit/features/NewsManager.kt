@@ -3,14 +3,16 @@ package com.droidcba.keddit.features
 import com.droidcba.keddit.api.RestAPI
 import com.droidcba.keddit.commons.RedditNews
 import com.droidcba.keddit.commons.RedditNewsItem
+import okhttp3.Cache
 import rx.Observable
 
-class NewsManager(private val api: RestAPI = RestAPI()) {
+class NewsManager(val cache: Cache,
+                  private val api: RestAPI = RestAPI(cache)) {
 
-    fun getNews(after: String): Observable<RedditNews> {
+    fun getNews(after: String, limit: String = "6"): Observable<RedditNews> {
         return Observable.create {
             subscriber ->
-            val callResponse = api.getNews(after)
+            val callResponse = api.getNews(limit, after)
             val response = callResponse.execute()
 
             if (response.isSuccessful) {
@@ -29,5 +31,4 @@ class NewsManager(private val api: RestAPI = RestAPI()) {
             }
         }
     }
-
 }
