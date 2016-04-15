@@ -51,7 +51,7 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
 }
 buildscript {
-    ext.kotlin_version = '1.0.0'
+    ext.kotlin_version = '1.0.1'
     repositories {
         mavenCentral()
     }
