@@ -11,10 +11,15 @@ data class RedditNews(
         val before: String,
         val news: List<RedditNewsItem>) : Parcelable {
 
+    companion object {
+        @JvmField @Suppress("unused")
+        val CREATOR = createParcel { RedditNews(it) }
+    }
+
     protected constructor(parcelIn: Parcel) : this(
             parcelIn.readString(),
             parcelIn.readString(),
-            listOf<RedditNewsItem>().apply {
+            mutableListOf<RedditNewsItem>().apply {
                 parcelIn.readTypedList(this, RedditNewsItem.CREATOR)
             }
     )
@@ -38,6 +43,7 @@ data class RedditNewsItem(
 ) : ViewType, Parcelable {
 
     companion object {
+        @JvmField @Suppress("unused")
         val CREATOR = createParcel { RedditNewsItem(it) }
     }
 
