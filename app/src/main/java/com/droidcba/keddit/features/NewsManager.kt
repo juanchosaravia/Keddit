@@ -7,10 +7,10 @@ import rx.Observable
 
 class NewsManager(private val api: RestAPI = RestAPI()) {
 
-    fun getNews(after: String): Observable<RedditNews> {
+    fun getNews(after: String, limit: String = "10"): Observable<RedditNews> {
         return Observable.create {
             subscriber ->
-            val callResponse = api.getNews(after)
+            val callResponse = api.getNews(after, limit)
             val response = callResponse.execute()
 
             if (response.isSuccessful) {
