@@ -1,11 +1,12 @@
 package com.droidcba.keddit.features
 
-import com.droidcba.keddit.api.RestAPI
+import com.droidcba.keddit.api.NewsAPI
+import com.droidcba.keddit.api.NewsRestAPI
 import com.droidcba.keddit.commons.RedditNews
 import com.droidcba.keddit.commons.RedditNewsItem
 import rx.Observable
 
-class NewsManager(private val api: RestAPI = RestAPI()) {
+class NewsManager(private val api: NewsAPI = NewsRestAPI()) {
 
     fun getNews(after: String, limit: String = "20"): Observable<RedditNews> {
         return Observable.create {
@@ -24,6 +25,7 @@ class NewsManager(private val api: RestAPI = RestAPI()) {
                                 response.body().data.after ?: "",
                                 response.body().data.before ?: "",
                                 news))
+                subscriber.onCompleted()
             } else {
                 subscriber.onError(Throwable(response.message()))
             }
