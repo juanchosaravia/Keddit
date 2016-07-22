@@ -10,3 +10,6 @@ https://medium.com/@juanchosaravia/learn-kotlin-while-developing-an-android-app-
 - RxJava
 - RxAndroid
 - Picasso
+
+This repo was the first implementation for this tutorial but there is another project that is evolving as the tutorial evolves. Feel free to see the other repo:
+https://github.com/juanchosaravia/KedditBySteps
